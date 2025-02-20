@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zed - The Modern Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    
+    <nav>
+        <div class="logo">
+            <img src="./baPHv04sQPSb1NayX9gD7Q.jpg" alt="Zed" class="logo-image">
+        </div>
+        <div class="nav-links">
+            <a href="#features" class="gameboy-text">Features</a>
+            <a href="#pricing" class="gameboy-text">Pricing</a>
+            <a href="#about" class="gameboy-text">About Us</a>
+            <a href="#" class="gameboy-text github-btn">GitHub</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1>The AI Code Editor you</h1>
+            <div class="deserve-container">
+                <h1>Deserve!</h1>
+                <svg class="curved-line" viewBox="0 0 600 50" preserveAspectRatio="none">
+                    <path d="M 50,45 Q 300,0 550,45" stroke="currentColor" fill="none" />
+                </svg>
+            </div>
+            <p>A high-performance, multiplayer code editor designed for modern developers</p>
+            <div class="cta-buttons">
+                <button class="download-mac">Download for Mac</button>
+                <button class="download-linux">Download for Linux</button>
+            </div>
+        </div>
+    </main>
+
+    <section id="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Lightning Fast</h3>
+                <p>Native performance with instant startup and zero latency</p>
+            </div>
+            <div class="feature-card">
+                <h3>Real-time Collaboration</h3>
+                <p>Code together with your team in real-time</p>
+            </div>
+            <div class="feature-card">
+                <h3>AI-Powered</h3>
+                <p>Smart completions and insights powered by AI</p>
+            </div>
+            <div class="feature-card">
+                <h3>Extensible</h3>
+                <p>Customize your editor with powerful extensions</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="editor-preview">
+        <div class="code-animation" id="codeAnimation">
+            <pre><code></code></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+</body>
+</html>
