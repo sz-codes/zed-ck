@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+/* Global Styles */
 :root {
     --primary-color: #6366f1;
     --text-color: #1f2937;
@@ -16,12 +15,13 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
 }
 
+/* Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -55,7 +55,7 @@ nav {
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
     font-family: 'Press Start 2P', cursive;
@@ -67,6 +67,7 @@ nav {
     border-radius: 6px;
 }
 
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -95,19 +96,20 @@ nav {
     font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    color: white;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
+/* Tagline Animation Modifications */
 .animated-text {
     position: relative;
     display: inline-block;
     margin-left: 10px;
 }
 
+/* "need." - cross-out effect */
 .need {
     display: inline-block;
     position: relative;
@@ -116,7 +118,8 @@ nav {
     transition: opacity 0.3s ease;
 }
 
-.need::before, .need::after {
+.need::before,
+.need::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -136,16 +139,7 @@ nav {
     transform: translate(-50%, -50%) rotate(-15deg);
 }
 
-.animated-text.animate .need::before,
-.animated-text.animate .need::after {
-    width: 108%;
-}
-
-.animated-text.animate .need {
-    opacity: 0;
-    transition-delay: 0.4s;
-}
-
+/* "deserve!" - pop-up effect with animated underline */
 .deserve {
     display: inline-block;
     position: absolute;
@@ -156,22 +150,33 @@ nav {
     color: white;
     transition: all 0.4s ease;
 }
-
 .deserve::before {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
     bottom: -5px;
-    height: 8px;
+    height: 10px;
     background: none;
     border: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='10'%3E%3Cpath d='M0,8 Q50,-4 100,8' stroke='%23404dd9' stroke-width='2.5' fill='none'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='15'%3E%3Cpath d='M0,12 Q50,-6 100,12' stroke='%236859dc' stroke-width='4.5' fill='none' opacity='0.9'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
+}
+
+
+/* When animation is triggered */
+.animated-text.animate .need::before,
+.animated-text.animate .need::after {
+    width: 108%;
+}
+
+.animated-text.animate .need {
+    opacity: 0;
+    transition-delay: 0.4s;
 }
 
 .animated-text.animate .deserve {
@@ -188,7 +193,7 @@ nav {
 .hero p {
     color: #94A3B8;
     font-size: 1.25rem;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0 2rem;
 }
 
 .cta-buttons {
@@ -235,17 +240,7 @@ nav {
     box-shadow: 0 4px 15px rgba(47, 35, 150, 0.3);
 }
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: #000000;
-    pointer-events: none;
-}
-
+/* Editor Preview */
 .editor-preview {
     position: relative;
     background-color: rgba(30, 41, 59, 0.8);
@@ -265,10 +260,6 @@ canvas {
     line-height: 1.5;
 }
 
-.comment { color: #6B7280; }
-.keyword { color: #60A5FA; }
-.function { color: #34D399; }
-
 pre {
     margin: 0;
     white-space: pre-wrap;
@@ -278,35 +269,27 @@ code {
     display: block;
 }
 
-.star-particle {
+/* Canvas Background */
+canvas {
     position: fixed;
-    width: 2px;
-    height: 2px;
-    background: #404dd9;
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0.4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
-    box-shadow: 0 0 10px #404dd9;
+    background-color: #000;
+    pointer-events: none;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
     .nav-links a {
         margin-left: 1rem;
     }
-    
     .cta-buttons {
         flex-direction: column;
     }
-    
-    .curved-line {
-        bottom: -5px;
-        height: 15px;
-        stroke-width: 2px;
-    }
-} 
-
+}
