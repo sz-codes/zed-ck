@@ -65,7 +65,62 @@ class Star {
         }
     }
 }
+// Navigation animation - Add after line 70
+// Get all navigation links
+const navLinks = document.querySelectorAll('.nav-links a');
+const navContainer = document.querySelector('.nav-links');
 
+// Create a cursor element to follow the hover
+const cursor = document.createElement('div');
+cursor.className = 'nav-cursor';
+cursor.style.position = 'absolute';
+cursor.style.height = '100%';
+cursor.style.backgroundColor = '#302c8e';
+cursor.style.borderRadius = '6px';
+cursor.style.zIndex = '0';
+cursor.style.opacity = '0';
+cursor.style.transition = 'all 0.3s ease';
+cursor.style.pointerEvents = 'none';
+
+// Add the cursor to the navigation container
+if (navContainer) {
+    navContainer.appendChild(cursor);
+}
+
+// Set up event listeners for all nav links
+navLinks.forEach(link => {
+    // On mouse enter
+    link.addEventListener('mouseenter', function() {
+        const rect = this.getBoundingClientRect();
+        const parentRect = navContainer.getBoundingClientRect();
+
+        // Position the cursor
+        cursor.style.width = `${rect.width}px`;
+        cursor.style.left = `${rect.left - parentRect.left}px`;
+        cursor.style.opacity = '1';
+
+        // Change text color for better visibility
+        this.style.color = '#ffffff';
+        this.style.mixBlendMode = 'difference';
+    });
+
+    // On mouse leave
+    link.addEventListener('mouseleave', function() {
+        this.style.color = '';
+        this.style.mixBlendMode = '';
+    });
+});
+
+// Hide cursor when mouse leaves the nav container
+navContainer.addEventListener('mouseleave', function() {
+    cursor.style.opacity = '0';
+
+    // Reset all link styles
+    navLinks.forEach(link => {
+        link.style.color = '';
+        link.style.mixBlendMode = '';
+    });
+});
 const stars = [];
 function init() {
     for (let i = 0; i < 300; i++) {
