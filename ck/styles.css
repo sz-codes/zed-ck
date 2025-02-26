@@ -199,44 +199,73 @@ nav {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
-}
-
-.signup-beta {
-    padding: 1rem 2.5rem;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background: #2f2396;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
+}/* WAITLIST CONTAINER (Double border + bright purple glow on hover) */
+.waitlist-container {
     position: relative;
-    z-index: 2;
+    display: flex;
+    align-items: center;
+    border: 2px solid #2f2396; /* Outer border color */
+    border-radius: 9999px;     /* Pill shape */
+    padding: 4px;
+    margin-top: 2rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.signup-beta span {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1.2;
+/* Inner border using a pseudo-element */
+.waitlist-container::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 2px solid #2f2396; /* Inner border color */
+    border-radius: 9999px;
+    pointer-events: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.signup-beta span:first-child {
+/* Glow effect on hover using #6366f1 (bright purple) */
+.waitlist-container:hover {
+    border-color: #6366f1;
+    box-shadow: 0 0 10px #6366f1; /* Outer glow */
+}
+
+.waitlist-container:hover::before {
+    border-color: #6366f1;
+    box-shadow: 0 0 12px #6366f1; /* Inner glow */
+}
+
+/* The email input */
+.waitlist-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    padding: 0.75rem 1rem;
     font-size: 1rem;
-    font-weight: 500;
+    z-index: 1;               /* Above pseudo-element */
+    border-radius: 9999px;    /* Keep input text nicely curved */
 }
 
-.signup-beta .beta-text {
-    font-size: 0.75rem;
-    opacity: 0.8;
+/* The button on the right */
+.waitlist-btn {
+    border: none;
+    outline: none;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #2f2396, #3728b0);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1;               /* Above pseudo-element */
+    transition: background 0.2s ease;
 }
 
-.signup-beta:hover {
-    transform: translateY(-2px);
-    background: #3728b0;
-    box-shadow: 0 4px 15px rgba(47, 35, 150, 0.3);
+/* Optional hover effect on the button */
+.waitlist-btn:hover {
+    background: linear-gradient(90deg, #3728b0, #2f2396);
 }
 
 /* Editor Preview */
