@@ -1,0 +1,753 @@
+/* ==================== 1) CUSTOM FONTS ==================== */
+@font-face {
+    font-family: "VintageRemington";
+    src: url("fonts/VintageRemington-3zdp6.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "TypewcondBold";
+    src: url("fonts/typewcond_bold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "39smooth";
+    src: url("fonts/39smooth.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Gradzy";
+    src: url("fonts/Gradzy-3lx13.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ModernTypewriter";
+    src: url("fonts/ModernTypewriter-zrOYw.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "VintageRemington";
+    src: url("fonts/VintageRemington-3zdp6.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Sarasvati";
+    src: url("fonts/Sarasvati-9Y4w5.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.vintage-remington-text {
+    font-family: "VintageRemington", sans-serif;
+}
+
+.zed-font {
+    font-family: "TypewriterInked", sans-serif !important;
+}
+
+/* TypewriterInked (feature card front/back, tagline, cost paragraph) */
+@font-face {
+    font-family: "TypewriterInked";
+    src: url("fonts/TypewriterInkedRegular-lgwPZ.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+/* Feature card fronts = normal */
+.card.feature-card .front {
+    font-family: "TypewriterInked", sans-serif;
+    font-style: normal;
+}
+/* Feature card backs = italic */
+.card.feature-card .back {
+    font-family: "TypewriterInked", sans-serif;
+    font-style: italic;
+}
+/* Tagline: "The AI Code Editor you need/deserve" (excluding "Zed") */
+.hero .text-content h1 *:not(.zed-font) {
+    font-family: "TypewriterInked", sans-serif !important;
+}
+/* "approx. 10,000 lines of code" in 3rd section */
+.cost-section .cost-content p {
+    font-family: "TypewriterInked", sans-serif;
+}
+
+
+@font-face {
+    font-family: "GroutpixFlowSlabSerifItalic";
+    src: url("fonts/GroutpixFlowSlabSerifItalic-MAdrw.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.pricing-card .card-header h3 {
+    font-family: "Gradzy", serif;
+}
+
+
+/* Sterion (for 3rd section <h2> lines) */
+@font-face {
+    font-family: "Sterion";
+    src: url("fonts/Sterion-BLLld.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.cost-section .cost-content h2 {
+    font-family: "Sterion", sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 0.5rem 0;
+}
+
+
+
+/* Global Styles */
+:root {
+    --primary-color: #6366f1;
+    --text-color: #1f2937;
+    --bg-color: #ffffff;
+    --secondary-bg: #f3f4f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+    width: 100%;
+    padding: 0.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    margin: 15px 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.github-btn {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.text-content {
+    width: 100%;
+    text-align: center;
+}
+
+.text-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Tagline Animation */
+.animated-text {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.need {
+    display: inline-block;
+    position: relative;
+    opacity: 1;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+.need::before,
+.need::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: #ff3333;
+    transform-origin: center;
+    transition: width 0.4s ease;
+}
+.need::before {
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+.need::after {
+    transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+.deserve {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    color: white;
+    transition: all 0.4s ease;
+}
+.deserve::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 10px;
+    background: none;
+    border: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='15'%3E%3Cpath d='M0,12 Q50,-6 100,12' stroke='%236859dc' stroke-width='4.5' fill='none' opacity='0.9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.animated-text.animate .need::before,
+.animated-text.animate .need::after {
+    width: 108%;
+    transition: width 0.5s ease;
+}
+.animated-text.animate .need {
+    opacity: 0;
+    transition: opacity 0.5s ease 0.5s;
+}
+.animated-text.animate .deserve {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease 0.5s;
+}
+.animated-text.animate .deserve::before {
+    transform: scaleX(1);
+    transition: transform 1s ease 1.5s;
+}
+
+.hero p {
+    color: #94A3B8;
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* WAITLIST Container */
+.waitlist-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #2f2396;
+    border-radius: 9999px;
+    padding: 4px;
+    margin-top: 2rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.waitlist-container::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 2px solid #2f2396;
+    border-radius: 9999px;
+    pointer-events: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.waitlist-container:hover {
+    border-color: #6366f1;
+    box-shadow: 0 0 10px #6366f1;
+}
+.waitlist-container:hover::before {
+    border-color: #6366f1;
+    box-shadow: 0 0 12px #6366f1;
+}
+.waitlist-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    z-index: 1;
+    border-radius: 9999px;
+}
+.waitlist-btn {
+    border: none;
+    outline: none;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #2f2396, #3728b0);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.2s ease;
+}
+.waitlist-btn:hover {
+    background: linear-gradient(90deg, #3728b0, #2f2396);
+}
+
+/* Canvas behind everything */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: #000;
+    pointer-events: none;
+}
+
+/* Navigation hover highlight */
+.nav-links {
+    position: relative;
+}
+.nav-cursor {
+    position: absolute;
+    height: 100%;
+    background-color: #302c8e;
+    border-radius: 6px;
+    z-index: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+.nav-links a {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+.nav-links a.active {
+    color: #ffffff;
+    mix-blend-mode: difference;
+}
+
+/* Features Section */
+.features-section {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 2rem;
+    background-color: transparent;
+    text-align: center;
+}
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.card.feature-card {
+    width: 220px;
+    height: 280px;
+    overflow: visible;
+}
+.card.feature-card .content {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms;
+    box-shadow: 0px 0px 10px 1px #000000ee;
+    border-radius: 5px;
+    position: relative;
+}
+/* FLIP SIDES */
+.card.feature-card .front,
+.card.feature-card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card.feature-card .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #151515;
+}
+.card.feature-card .back::before {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 160px;
+    height: 160%;
+    background: linear-gradient(90deg, transparent, #332395, #332395, #332395, #332395, transparent);
+    animation: rotation_481 5000ms infinite linear;
+}
+@keyframes rotation_481 {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(360deg); }
+}
+.card.feature-card .back-content {
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    background-color: #151515;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    word-spacing: 0.2em;
+    line-height: 1.6;
+}
+/* Flip effect on hover */
+.card.feature-card:hover .content {
+    transform: rotateY(180deg);
+}
+/* Front side */
+.card.feature-card .front {
+    transform: rotateY(180deg);
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+.card.feature-card .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.card.feature-card .img img {
+    max-width: 80%;
+    max-height: 80%;
+}
+.card.feature-card .front-content {
+    background: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    word-spacing: 0.2em;
+    line-height: 1.6;
+}
+.orange-text {
+    color: #D1D5DB;
+}
+.card-footer {
+    font-size: 0.75rem;
+}
+.feature-logo {
+    max-width: 60px;
+    max-height: 60px;
+    display: block;
+    margin: 0 auto;
+}
+/* 3rd feature card transparent on hover */
+.features-container .card.feature-card:nth-of-type(3):hover .front,
+.features-container .card.feature-card:nth-of-type(3):hover .back,
+.features-container .card.feature-card:nth-of-type(3):hover .front-content,
+.features-container .card.feature-card:nth-of-type(3):hover .back-content {
+    background-color: transparent !important;
+}
+/* 2nd feature card bigger logo */
+.features-container .card.feature-card:nth-of-type(2) .feature-logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+/* Pricing Section */
+.pricing-section {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 2rem;
+    background-color: transparent;
+    text-align: center;
+}
+.section-header {
+    margin-bottom: 3rem;
+}
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.section-header p {
+    color: #94A3B8;
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.pricing-card {
+    position: relative;
+    background-color: rgba(30, 41, 59, 0.8);
+    border-radius: 12px;
+    width: 240px;
+    padding: 2rem 1.5rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+.pricing-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.4);
+}
+.pricing-card:hover {
+    background-color: rgba(47, 35, 150, 0.3);
+    border: 2px solid #6366f1;
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+}
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #6366f1;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.card-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.card-header h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+.price span {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+.card-content ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.card-content li {
+    padding: 0.6rem 0;
+    color: #94A3B8;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .pricing-container {
+        gap: 1.5rem;
+    }
+    .pricing-card {
+        width: 220px;
+    }
+}
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing-card {
+        width: 280px;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+    .pricing-card.featured:hover {
+        transform: translateY(-15px);
+    }
+}
+
+/* === 3rd Section: API Cost === */
+.cost-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.cost-content {
+    flex: 1 1 300px;
+}
+
+.table-container {
+    flex: 1 1 400px;
+    min-width: 300px;
+}
+
+/* Table styling */
+.api-cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(30, 41, 59, 0.8);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.api-cost-table th,
+.api-cost-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.api-cost-table thead {
+    background-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Fade animations */
+.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments for cost section */
+@media (max-width: 768px) {
+    .cost-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .cost-content,
+    .table-container {
+        margin: 0;
+        max-width: 100%;
+    }
+    .cost-content h2 {
+        text-align: center;
+    }
+}
+/* Force tagline to TypewriterInked, ignoring everything else */
+.hero .text-content h1,
+
+.hero .text-content h1 .animated-text,
+.hero .text-content h1 .need,
+.hero .text-content h1 .deserve,
+.hero .text-content h1 span:not(.zed-font) {
+    font-family: "TypewriterInked", sans-serif !important;
+}
+.pricing-card .card-content li {
+    font-family: "VintageRemington", sans-serif;
+}
+.pricing-section .section-header h2 {
+    font-family: "Sarasvati", sans-serif;
+}
+.pricing-section .section-header p {
+    font-family: "ModernTypewriter", monospace;
+}
+.pricing-card .price {
+    font-family: "ModernTypewriter", monospace !important;
+}
+.api-cost-table tbody td {
+    font-family: "ModernTypewriter", sans-serif !important;
+}
+.api-cost-table thead th {
+    font-family: "ModernTypewriter", sans-serif !important;
+}
+.waitlist-input::placeholder {
+    font-family: "ModernTypewriter", sans-serif !important;
+}
+.waitlist-btn {
+    font-family: "ModernTypewriter", sans-serif;
+}
