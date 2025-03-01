@@ -11,7 +11,7 @@
 ---
 
 ## ✨ Overview
-Zed is a cutting-edge, AI‑powered code editor that **blends the familiar VSCode interface** with **with any LLM you want**. Its sleek landing page showcases core features, transparent pricing tiers, and a striking hero animation where the word “need” is struck out and replaced with “deserve.”
+Zed is a cutting-edge, AI‑powered code editor that **blends the familiar VSCode interface** with **with any LLM you want**. Its sleek landing page showcases core features and transparent pricing tiers.
 
 ---
 
