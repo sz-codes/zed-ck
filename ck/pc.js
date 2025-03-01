@@ -13,7 +13,7 @@ window.addEventListener('resize', resizeCanvas);
 let mouse = {
     x: undefined,
     y: undefined,
-    radius: 100 // Interaction radius
+    radius: 125// Interaction radius
 };
 
 window.addEventListener('mousemove', (event) => {
@@ -48,6 +48,7 @@ class Star {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
+
         if (distance < mouse.radius) {
             const force = (mouse.radius - distance) / mouse.radius;
             const directionX = dx / distance;
@@ -65,12 +66,11 @@ class Star {
         }
     }
 }
-// Navigation animation - Add after line 70
-// Get all navigation links
+
+// Navigation hover highlight (cursor)
 const navLinks = document.querySelectorAll('.nav-links a');
 const navContainer = document.querySelector('.nav-links');
 
-// Create a cursor element to follow the hover
 const cursor = document.createElement('div');
 cursor.className = 'nav-cursor';
 cursor.style.position = 'absolute';
@@ -82,45 +82,39 @@ cursor.style.opacity = '0';
 cursor.style.transition = 'all 0.3s ease';
 cursor.style.pointerEvents = 'none';
 
-// Add the cursor to the navigation container
 if (navContainer) {
     navContainer.appendChild(cursor);
 }
 
-// Set up event listeners for all nav links
 navLinks.forEach(link => {
-    // On mouse enter
     link.addEventListener('mouseenter', function() {
         const rect = this.getBoundingClientRect();
         const parentRect = navContainer.getBoundingClientRect();
 
-        // Position the cursor
         cursor.style.width = `${rect.width}px`;
         cursor.style.left = `${rect.left - parentRect.left}px`;
         cursor.style.opacity = '1';
 
-        // Change text color for better visibility
         this.style.color = '#ffffff';
         this.style.mixBlendMode = 'difference';
     });
 
-    // On mouse leave
     link.addEventListener('mouseleave', function() {
         this.style.color = '';
         this.style.mixBlendMode = '';
     });
 });
 
-// Hide cursor when mouse leaves the nav container
 navContainer.addEventListener('mouseleave', function() {
     cursor.style.opacity = '0';
 
-    // Reset all link styles
     navLinks.forEach(link => {
         link.style.color = '';
         link.style.mixBlendMode = '';
     });
 });
+
+// Create & animate stars
 const stars = [];
 function init() {
     for (let i = 0; i < 300; i++) {
