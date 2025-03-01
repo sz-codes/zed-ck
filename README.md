@@ -1,6 +1,6 @@
 <h1 align="center">Zed – The Modern AI Code Editor</h1>
 <p align="center">
-  <em>Because you don’t just <strong>need</strong> an AI code editor, you <strong>deserve</strong> one!</em>
+  <em>Because you don’t just <strong>need</strong> a transparent AI code editor, you <strong>deserve</strong> one!</em>
 </p>
 
 <p align="center">
