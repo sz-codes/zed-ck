@@ -9,7 +9,7 @@
 </p>
 #link 
 https://zed-ai.netlify.app/
----
+
 
 ## ✨ Overview
 Zed is a cutting-edge, AI‑powered code editor that **blends the familiar VSCode interface** with **with any LLM you want**. Its sleek landing page showcases core features and transparent pricing tiers.
