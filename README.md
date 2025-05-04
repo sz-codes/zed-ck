@@ -7,7 +7,8 @@
   <img src="https://img.shields.io/badge/Built_on-VSCode-blueviolet?style=flat-square" alt="VSCode Badge"/>
   <img src="https://img.shields.io/badge/License-Ask%20Author-green?style=flat-square" alt="License Badge"/>
 </p>
-
+#link 
+https://zed-ai.netlify.app/
 ---
 
 ## ✨ Overview
